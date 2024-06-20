@@ -9,41 +9,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <!-- Header section with a background color and centered text -->
+    <!-- Header section with a background color and centered text -->
     <header class="hero has-background-info-dark">
         <div class="hero-body has-text-centered">
-            <h1 class="title" id="main-title">The Weather Man Knows</h1>
+            <h1 class="title" id="main-title">The Weatherman Knows</h1>
         </div>
     </header>
 
     <main class="columns is-centered">
         <aside id="search-section" class="column is-one-quarter">
             <section class="box">
-                <div class="field has-addons">
+                <!-- Search form with input and button -->
+                <form id="searchForm" class="field has-addons">
                     <div class="control is-expanded">
-                        <input class="input" type="text" id="city-input" placeholder="Search for a city">
+                        <input class="input" type="text" id="cityInput" placeholder="Search for a city">
                     </div>
                     <div class="control">
-                        <button class="button has-background-info-dark has-text-white" id="search-btn">Search</button>
+                        <button type="submit" class="button has-background-info-dark has-text-white">Search</button>
                     </div>
-                </div>
+                </form>
+                
                 <!-- Navigation with preselected city buttons -->
-                <nav id="preselected-cities">
-                    <button class="button is-fullwidth is-light">Atlanta</button>
-                    <button class="button is-fullwidth is-light">Denver</button>
-                    <button class="button is-fullwidth is-light">Seattle</button>
-                    <button class="button is-fullwidth is-light">San Francisco</button>
-                    <button class="button is-fullwidth is-light">Orlando</button>
-                </nav>
+                <div id="preselected-cities-section" class="box">
+                    <h2 class="subtitle">Cities</h2>
+                    <nav id="preselected-cities">
+                        <button class="button is-fullwidth is-light">Atlanta</button>
+                        <button class="button is-fullwidth is-light">Denver</button>
+                        <button class="button is-fullwidth is-light">Seattle</button>
+                        <button class="button is-fullwidth is-light">San Francisco</button>
+                        <button class="button is-fullwidth is-light">Orlando</button>
+                    </nav>
+                </div>
+
+                <!-- Placeholder for recent search history -->
+                <div id="recent-search-section" class="box">
+                    <h2 class="subtitle">Recent Search</h2>
+                    <div id="recentSearch"></div>
+                </div>
             </section>
         </aside>
-                <!-- Section to display weather information -->
+        
+        <!-- Section to display weather information -->
         <section id="weather-section" class="column is-three-quarters">
-                <!-- Container for dynamically added weather boxes -->
-            <div id="weather-container" class="columns is-multiline"></div>
+            <!-- Container for dynamically added weather boxes -->
+            <div id="weather-container" class="weather-container"></div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
